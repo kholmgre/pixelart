@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
 class Pixel extends React.Component<any, any>{
     constructor(props) {
@@ -11,7 +12,8 @@ class Pixel extends React.Component<any, any>{
     }
     handleClick(e: any){
        if(this.props.currentSelectedColor !== this.state.color){
-           this.setState({ color: this.props.currentSelectedColor});
+           this.setState({ color: this.props.currentSelectedColor });
+           ReactDOM.findDOMNode(this).classList.add("pixel-clicked");
        }
     }
     render(){
