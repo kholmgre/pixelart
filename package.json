@@ -1,0 +1,32 @@
+{
+  "name": "pixelart",
+  "version": "1.0.0",
+  "description": "testing",
+  "main": "index.tsx",
+  "scripts": {
+    "compilescss": "node-sass src/main.scss dist/main.css",
+    "start": "webpack --config webpack.config.js -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kholmgre/pixelart.git"
+  },
+  "author": "Kristofer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kholmgre/pixelart/issues"
+  },
+  "homepage": "https://github.com/kholmgre/pixelart#readme",
+  "dependencies": {
+    "@types/react": "^15.0.11",
+    "@types/react-dom": "^0.14.23",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.0.4",
+    "source-map-loader": "^0.1.6",
+    "typescript": "^2.1.6",
+    "webpack": "^1.13.2"
+  }
+}

@@ -1,0 +1,71 @@
+$backgroundColor: white;
+
+body { 
+    background-color: $backgroundColor;
+}
+
+.app-container {
+    width: 600px;
+    height: 600px;
+}
+
+.colors-select {
+    padding: 5px;
+}
+
+.pixel {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.select-pixel {
+    @extend .pixel;
+    padding: 2px;
+    border: 1px solid black;
+}
+
+.row-container div {
+    padding: 0;
+    margin: 0;
+    height: 40px;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+.black {
+    background-color: black;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.white {
+    background-color: white;
+}
+
+.bronze {
+    background-color: #756B09;
+}
+
+.light-buttercup {
+    background-color: #F5A906;
+}
+
+.deep-boston {
+    background-color: #D70C02;
+}
+
+.pixel-art {
+    width: 336px;
+    height: 336px;
+    background-color: darkgray; 
+}
