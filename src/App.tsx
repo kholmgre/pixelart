@@ -6,6 +6,7 @@ import * as domtoimage from 'dom-to-image';
 
 class App extends React.Component<any, any>{
     selectedColor: string
+    pixels: Array<JSX.Element>
     constructor() {
         super();
         this.state = { selectedColor: 'pixel' };
@@ -15,12 +16,12 @@ class App extends React.Component<any, any>{
     }
     saveImage() {
         domtoimage.toJpeg(document.getElementById('row-container'), { quality: 0.95 })
-    .then(function (dataUrl) {
-        var link = document.createElement('a');
-        link.download = 'my-image-name.jpeg';
-        link.href = dataUrl;
-        link.click();
-    });
+            .then(function (dataUrl) {
+                var link = document.createElement('a');
+                link.download = 'image.jpeg';
+                link.href = dataUrl;
+                link.click();
+            });
     }
     render() {
         let ids = [];
@@ -29,69 +30,67 @@ class App extends React.Component<any, any>{
             ids[i] = i;
         }
 
-        let pixels = ids.map((p) => { return <Pixel key={p} currentSelectedColor={this.state.selectedColor} /> });
+        let pixels = ids.map((p) => { return <Pixel key={p} currentSelectedColor={this.state.selectedColor} color={'pixel black'} /> });
+
         return (
-            <div>
-                <input type="button" onClick={this.saveImage} value="save" />
-                <SelectColorContainer onColorSelected={this.colorSelected.bind(this)} />
-                <hr />
+            <div className="container">
+                <div className="menu">
+                    <SelectColorContainer onColorSelected={this.colorSelected.bind(this)} saveImage={this.saveImage.bind(this)}/>
+                </div>
                 <div className="row-container" id="row-container">
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                     <div>
-                        {pixels.slice(0, 48)}
-                    </div>
-                    <div>
-                        {pixels.slice(0, 48)}
+                        {pixels.slice(0, 32)}
                     </div>
                 </div>
             </div>

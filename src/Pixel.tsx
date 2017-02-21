@@ -1,9 +1,13 @@
 import * as React from 'react';
 
 class Pixel extends React.Component<any, any>{
-    constructor() {
-        super();
-        this.state = { color: 'pixel'}
+    constructor(props) {
+        super(props);
+        if(this.props.color){
+            this.state = { color: this.props.color }
+        } else {
+            this.state = { color: 'pixel'}
+        }
     }
     handleClick(e: any){
        if(this.props.currentSelectedColor !== this.state.color){
